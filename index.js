@@ -24,6 +24,7 @@ function startApp() {
           'Add a role',
           'Add an employee',
           'Update an employee role',
+          'Exit',
         ],
       },
     ])
@@ -85,7 +86,36 @@ function startApp() {
             });
           break;
         case 'Add a role':
-          // Implement code for adding a role
+          inquirer
+            .prompt([
+              {
+                type: 'input',
+                name: 'title',
+                message: 'Enter the title of the role:',
+              },
+              {
+                type: 'input',
+                name: 'salary',
+                message: 'Enter the salary for the role:',
+              },
+              {
+                type: 'input',
+                name: 'departmentId',
+                message: 'Enter the department ID for the role:',
+              },
+            ])
+            .then((answers) => {
+              const { title, salary, departmentId } = answers;
+              addRole(title, salary, departmentId)
+                .then((result) => {
+                  console.log('Role added successfully!');
+                  startApp();
+                })
+                .catch((error) => {
+                  console.error('Error adding role:', error);
+                  startApp();
+                });
+            });
           break;
         case 'Add an employee':
           // Implement code for adding an employee
@@ -93,9 +123,12 @@ function startApp() {
         case 'Update an employee role':
           // Implement code for updating an employee role
           break;
-        default:
+        case 'Exit':
           console.log('Goodbye!');
           process.exit(0);
+        default:
+          console.log('Invalid option. Please choose again.');
+          startApp();
       }
     })
     .catch((error) => {
