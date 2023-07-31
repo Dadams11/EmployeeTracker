@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'employee_tracker', // Make sure to replace this with your actual database name
+  database: 'employee_tracker',
 });
 
 // Function to get all departments
