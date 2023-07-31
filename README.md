@@ -16,3 +16,4 @@ The user will then be allowed to choose the following options and abilities:
 'Update Employee Role' - Updates a role for existing employees and adds the role to a department
 'Exit' - Exits the application
 
+Links: https://github.com/Dadams11/EmployeeTracker
