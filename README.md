@@ -1,41 +1,31 @@
-EmployeeTracker
+# EmployeeTracker
 
-Description
-EmployeeTracker is a Content Management System solution for managing a company's employees using Node.js, the Inquirer npm package, and a MySQL database. This application allows users to perform various tasks related to employee management, such as adding departments, roles, and employees, as well as viewing and updating employee information.
+Description 
 
-Installation
-To get started, follow these steps:
+A Content Management System solution for managing a company's employees using Node.js, the Inquirer npm package and a MySQL database. This application allows the user to add departments, roles, employees; view departments, roles, employees and update employee roles.
 
-Clone the repository from GitHub: EmployeeTracker
-Open the terminal and navigate to the project directory.
-Install the required dependencies by running the command:
-Copy code
-npm install
-Usage
-To run the application, use the following command in the terminal:
+Utilizing the App
 
-Copy code
-node index.js
-The application will prompt you to choose from the following options and abilities:
 
-View All Employees: View all employees and their respective information and roles.
-View All Departments: View all departments.
-View All Roles: View all roles and their corresponding salaries.
-Add an Employee: Add a new employee to the database.
-Add a Department: Add a new department to the database.
-Add a Role: Add a new role and salary to the database.
-Update Employee Role: Update the role for existing employees and assign them to a specific department.
-Exit: Close the application.
-Demo
-Watch the application in action:
+The user will open the index.js file in their terminal and run the command npm i, then run the command node index.js to begin running the application.
 
-Demo Video 1
-Demo Video 2
-Demo Video 3
+The user will then be allowed to choose the following options and abilities:
 
-Contributing
-Contributions to EmployeeTracker are welcome! If you find any issues or have suggestions for improvements, feel free to create a pull request.
+'View All Employees' - Views all employees and their respective information and roles
+'View All Departments' - Views all departments
+'View All Roles' - Views all roles and salaries for the cooresponding roles
+'Add an Employee' - Adds an employee to the database
+'Add a Department' - Adds a department to the database
+'Add a Role' - Adds a role and salary to the database
+'Update Employee Role' - Updates a role for existing employees and adds the role to a department
+'Exit' - Exits the application
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Links: https://github.com/Dadams11/EmployeeTracker
+
+To Watch https://drive.google.com/file/d/1FUKDZtS9vAh_yru-MfGR0N0U6BQ4rfKJ/view
+
+https://drive.google.com/file/d/12a7vLtUEWutqYkwdRHPHw-sgN84KlLaY/view
+
+
+https://drive.google.com/file/d/1BmT5zaruQfgh0JQzeqxtBpLxss4DQkKI/view
 
