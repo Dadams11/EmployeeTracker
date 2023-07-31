@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'employee_tracker', // Replace 'employee_tracker' with the name of your database
+  database: 'employee_tracker', // Make sure to replace this with your actual database name
 });
 
 // Function to get all departments
@@ -78,6 +78,11 @@ function getAllEmployees() {
 // Function to add a new employee
 function addEmployee(firstName, lastName, roleId, managerId) {
   return new Promise((resolve, reject) => {
+    // If managerId is empty (left blank), set it to NULL
+    if (!managerId) {
+      managerId = null;
+    }
+
     const query = 'INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)';
     connection.query(query, [firstName, lastName, roleId, managerId], (error, results) => {
       if (error) reject(error);

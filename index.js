@@ -118,10 +118,68 @@ function startApp() {
             });
           break;
         case 'Add an employee':
-          // Implement code for adding an employee
+          inquirer
+            .prompt([
+              {
+                type: 'input',
+                name: 'firstName',
+                message: 'Enter the first name of the employee:',
+              },
+              {
+                type: 'input',
+                name: 'lastName',
+                message: 'Enter the last name of the employee:',
+              },
+              {
+                type: 'input',
+                name: 'roleId',
+                message: 'Enter the role ID of the employee:',
+              },
+              {
+                type: 'input',
+                name: 'managerId',
+                message: "Enter the manager's ID of the employee (or leave blank if none):",
+              },
+            ])
+            .then((answers) => {
+              const { firstName, lastName, roleId, managerId } = answers;
+              addEmployee(firstName, lastName, roleId, managerId)
+                .then((result) => {
+                  console.log('Employee added successfully!');
+                  startApp();
+                })
+                .catch((error) => {
+                  console.error('Error adding employee:', error);
+                  startApp();
+                });
+            });
           break;
         case 'Update an employee role':
-          // Implement code for updating an employee role
+          inquirer
+            .prompt([
+              {
+                type: 'input',
+                name: 'employeeId',
+                message: 'Enter the ID of the employee you want to update:',
+              },
+              {
+                type: 'input',
+                name: 'newRoleId',
+                message: 'Enter the new role ID for the employee:',
+              },
+            ])
+            .then((answers) => {
+              const { employeeId, newRoleId } = answers;
+              updateEmployeeRole(employeeId, newRoleId)
+                .then((result) => {
+                  console.log('Employee role updated successfully!');
+                  startApp();
+                })
+                .catch((error) => {
+                  console.error('Error updating employee role:', error);
+                  startApp();
+                });
+            });
           break;
         case 'Exit':
           console.log('Goodbye!');
